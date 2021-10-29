@@ -6,6 +6,9 @@ import Login from './components/Login/Login';
 import Header from './components/Header/Header';
 import NotFound from './components/NotFound/NotFound';
 import AuthProvider from './components/Context/AuthProvider';
+import Offers from './components/Offers/Offers';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Orders from './components/Orders/Orders';
 
 function App() {
   return (
@@ -20,6 +23,12 @@ function App() {
               <Route path="/home">
                 <Home></Home>
               </Route>
+              <PrivateRoute path="/orders/:offerId">
+                <Orders></Orders>
+              </PrivateRoute>
+              <PrivateRoute path="/orders">
+                <Orders></Orders>
+              </PrivateRoute>
               <Route path="/login">
                 <Login></Login>
               </Route>
