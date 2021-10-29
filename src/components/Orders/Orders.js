@@ -24,7 +24,7 @@ const Orders = () => {
      },[])
 
      const findOffer = offers.find(offer => offer?._id ===offerId)
-     console.log(findOffer);
+     // console.log(findOffer);
 
 
      const onSubmit = data => {
@@ -39,10 +39,12 @@ const Orders = () => {
           .then(data =>{
                console.log(data)
                if(data?.insertedId){
+                    console.log(data)
                     alert('Successfully Added the User')
                     
                }
           })
+          console.log(data)
 
      };
 
@@ -83,7 +85,9 @@ const Orders = () => {
 
                          {errors.phone && <span>This field is required</span>}
 
-                         <input className="mb-3"  defaultValue={findOffer?.title}  {...register("offer")} />
+                         <input className="mb-3"  defaultValue={findOffer?.title}  {...register("offer", { required: true })} />
+
+                         {errors.offer && <span>This field is required</span>}
                          
                          <input type="submit" />
                     </form>

@@ -8,7 +8,7 @@ const Header = () => {
      return (
           <>
           <Navbar bg="dark" variant="dark">
-               <Container>
+               <Container fluid>
                     <Navbar.Brand>Navbar</Navbar.Brand>
                     {
                          user.email && <Navbar.Brand>Signed In As: {user.displayName}</Navbar.Brand>
@@ -16,6 +16,9 @@ const Header = () => {
                     <Nav className="me-auto">
                          <Link to="/home">Home</Link>
                          <Link to="/orders">Orders</Link>
+                         <Link to="/myorders">My Order</Link>
+                         <Link to="/manageOrders">Manage Order</Link>
+                         <Link to="/admin">Admin</Link>
                          
                          
                       {
