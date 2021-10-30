@@ -4,7 +4,7 @@ import { Card, Col, Container, Row } from 'react-bootstrap';
 const NewService = () => {
      return (
           <Container fluid className="service-container">
-               <Row>
+               <Row  className="pb-5">
                     <div className="mt-5 mb-5">
                          <h4 className="text-color">Stay With Us</h4>
                          <h3 className="head-col">Some New Travelling Services<br /> Coming Soon</h3>

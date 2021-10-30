@@ -4,7 +4,7 @@ import { Card, Col, Container, Row } from 'react-bootstrap';
 const Client = () => {
      return (
           <Container  fluid className="service-container">
-               <Row>
+               <Row  className="pb-5">
 
 
                     <div className=" mt-4">

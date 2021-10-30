@@ -12,6 +12,7 @@ import Orders from './components/Orders/Orders';
 import MyOrder from './components/MyOrder/MyOrder';
 import ManageOrder from './components/ManageOrder/ManageOrder';
 import Admin from './Admin/Admin';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
                 <NotFound></NotFound>
               </Route>
             </Switch>
+            <Footer></Footer>
           </BrowserRouter>
       </AuthProvider>
     </div>
