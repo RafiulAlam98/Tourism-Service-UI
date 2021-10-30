@@ -3,6 +3,7 @@ import { Container, Nav, Navbar,Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from './../Hooks/UseAuth/useAuth';
+import './Header.css'
 
 const Header = () => {
      const {user,userSignOut} = useAuth()
@@ -10,18 +11,16 @@ const Header = () => {
           <>
           <Navbar
             sticky="top"
-            bg="dark"
+            
             variant="dark"
             expand="lg"
             className="navbar-style"
           >
             <Container fluid>
               <Navbar.Brand to="/home">
-                
                <Nav.Link as={HashLink} className="text-warning" to="/home">
-                <span className="text-white">TOURISM  </span>
-                <span className="text-warning">AND </span>
-                <span className="text-info">TRAVEL </span>
+                <span className="head-col fw-bold">GLOBAL</span>
+                <span className="text-color fw-bold"> VOYAGES</span>
                </Nav.Link>
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="navbarScroll" />
@@ -31,36 +30,36 @@ const Header = () => {
                   style={{ maxHeight: '100px' }}
                   navbarScroll
                 >
-                  <Nav.Link as={HashLink} className="text-warning" to="/home">
+                  <Nav.Link as={HashLink} className="text-dark fw-bold" to="/home">
                     HOME
                   </Nav.Link>
-                  <Nav.Link as={HashLink} to="/orders">
+                  <Nav.Link as={HashLink} className="text-dark fw-bold" to="/orders">
                     ORDERS
                   </Nav.Link>
-                  <Nav.Link as={HashLink} to="/myorders">
+                  <Nav.Link as={HashLink} className="text-dark fw-bold" to="/myorders">
                     MY ORDER
                   </Nav.Link>
     
-                  <Nav.Link as={Link} to="/manageOrders">
+                  <Nav.Link as={Link} className="text-dark fw-bold" to="/manageOrders">
                     MANAGE ORDER
                   </Nav.Link>
 
-                  <Nav.Link as={Link} to="/admin">
+                  <Nav.Link as={Link} className="text-dark fw-bold" to="/admin">
                   ADMIN
                   </Nav.Link>
     
-                  <Navbar.Text className="text-white mx-5">
+                  <Navbar.Text className="text-dark fw-bold">
                     {
-                    user.email && <Navbar.Brand>Signed In As: {user.displayName}</Navbar.Brand>
+                    user.email && <Navbar.Brand className="text-dark fw-bold mx-5" >Signed In As: <span className="text-danger">{user.displayName}</span></Navbar.Brand>
                     }
                   </Navbar.Text>
     
                   {user.email ?  (
-                    <Button onClick={userSignOut} variant="info" type="submit">
+                    <Button onClick={userSignOut} variant="dark" type="submit" className="text-warning ">
                       LOGOUT
                     </Button>
                   ) : (
-                    <Nav.Link as={HashLink} to="/login">
+                    <Nav.Link as={HashLink}  className="text-dark fw-bold" to="/login">
                          Sign In
                     </Nav.Link>
                   )}

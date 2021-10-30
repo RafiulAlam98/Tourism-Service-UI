@@ -17,9 +17,9 @@ const Offers = () => {
      },[])
 
      return (
-          <Container fluid className="service-container">
+          <Container fluid className="services-container">
                <h4 className="text-color">Choose Your Package</h4>
-               <h1>Select Your Best Package <br /> For Your Travel</h1>
+               <h1 className="head-col">Select Your Best Package <br /> For Your Travel</h1>
             <Row>
                {
                     offers.map(offer => <Offer key={offer._id}

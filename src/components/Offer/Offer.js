@@ -11,17 +11,17 @@ const Offer = (props) => {
           <Col sm={12} md={6} lg={4} className="offer-container">
                <Card >
                     <Card.Img className="img-fluid" variant="top" src={img} />
-                         <Card.Body >
+                         <Card.Body>
                               <div className="d-flex  justify-content-between">
-                                   <h6 className="text-color">{cost} <span>/Per Person</span></h6>
-                                   <p>Rating: <span className="text-color">{rating} out of 5</span> </p>
+                                   <h6 className="text-color fw-bold">{cost} <span>/Per Person</span></h6>
+                                   <p className="fw-bold">Rating: <span className="text-color">{rating} out of 5</span> </p>
                               </div>
-                              <h3 className="text-warning">{title}</h3>
-                              <h4  className="text-info">{place}</h4>
+                              <h5 className="head-col">{title}</h5>
+                              <h2  className="text-primary">{place}</h2>
                          </Card.Body>
 
                          <Link to={`/orders/${_id}`}>
-                                   <Button variant="secondary" >Place Orders</Button>
+                                   <Button variant="warning" className="text-dark fw-bold" >PLACE ORDER</Button>
                               </Link>
                     </Card>
           </Col>

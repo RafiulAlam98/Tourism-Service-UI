@@ -1,8 +1,13 @@
-.service-container{
+.services-container{
      margin-top: 60px;
      background-color: whitesmoke;
 }
 
 .text-color{
      color: tomato;
+     font-weight: 700;
+}
+
+.head-col{
+     color:  #B565A7;
 }
