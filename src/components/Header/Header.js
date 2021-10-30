@@ -45,7 +45,7 @@ const Header = () => {
                     MANAGE ORDER
                   </Nav.Link>
 
-                  <Nav.Link as={Link} to="/manageOrders">
+                  <Nav.Link as={Link} to="/admin">
                   ADMIN
                   </Nav.Link>
     
