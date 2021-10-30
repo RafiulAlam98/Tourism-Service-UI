@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { Container, Row } from 'react-bootstrap';
 import Offer from './../Offer/Offer';
+import './Offers.css'
 
 const Offers = () => {
 
@@ -16,7 +17,9 @@ const Offers = () => {
      },[])
 
      return (
-          <Container fluid>
+          <Container fluid className="service-container">
+               <h4 className="text-color">Choose Your Package</h4>
+               <h1>Select Your Best Package <br /> For Your Travel</h1>
             <Row>
                {
                     offers.map(offer => <Offer key={offer._id}
