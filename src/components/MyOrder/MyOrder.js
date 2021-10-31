@@ -20,7 +20,7 @@ const MyOrder = () => {
      },[])
      
      const findUser = myOrder.filter(data => data?.email === user?.email)
-     // console.log(findUser)
+     console.log(findUser)
 
 
      return (

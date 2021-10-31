@@ -24,7 +24,7 @@ const Offer = (props) => {
                          </Card.Body>
 
                          <Link to={`/orders/${_id}`}>
-                                   <Button variant="warning" className="text-dark fw-bold" >PLACE ORDER</Button>
+                                   <Button variant="warning" className="text-dark fw-bold" >BOOK NOW</Button>
                               </Link>
                     </Card>
           </Col>

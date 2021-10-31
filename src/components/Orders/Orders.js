@@ -26,7 +26,7 @@ const Orders = () => {
      },[])
 
      const findOffer = offers.find(offer => offer?._id ===offerId)
-     console.log(findOffer);
+     console.log(findOffer?.place);
 
 
      const onSubmit = data => {
@@ -101,13 +101,14 @@ const Orders = () => {
 
                                    {errors.phone && <span>This field is required</span>}
 
-                                   <input className="mb-3"  defaultValue={findOffer?.place}  {...register("offer", { required: true })} />
+                                   <input className="mb-3"  defaultValue={findOffer?.place}  {...register("place", { required: true })} />
 
-                                   {errors.offer && <span>This field is required</span>}
+                                   {errors.place && <span>This field is required</span>}
 
-                                   <input className="mb-3"  defaultValue={findOffer?.cost}  {...register("cost", { required: true })} />
 
-                                   {errors.offer && <span>This field is required</span>}
+                                   <input className="mb-3" placeholder={"Status"}  defaultValue={"pending"}  {...register("status", { required: true })} />
+
+                                   {errors.status && <span>This field is required</span>}
                                    
                                    <input type="submit" />
                                    
@@ -129,9 +130,3 @@ export default Orders;
 
 
 
-
-// <Col xs={12} md={12} lg={12}>
-//                          <div className="d-flex flex-row justify-content-between mb-5 mt-5 order-container">
-                             
-//                          </div>
-//                     </Col>

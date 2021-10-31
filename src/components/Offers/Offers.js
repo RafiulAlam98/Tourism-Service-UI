@@ -21,7 +21,7 @@ const Offers = () => {
 
      return (
           <Container fluid className="services-container pb-5">
-               <h4 className="text-color">Choose Your Package</h4>
+               <h4 className="text-color pt-5">Choose Your Package</h4>
                <h1 className="head-col">Select Your Best Package <br /> For Your Travel</h1>
             <Row>
                {

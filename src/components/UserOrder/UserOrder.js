@@ -6,7 +6,7 @@ const UserOrder = (props) => {
      const orders = props.user
      const arr = [orders]
      // console.log(arr)
-     const {_id,address,email,name,offer,cost} = props.user
+     const {_id,address,email,name,place,cost,status} = props.user
 
      const cancelBooking = id =>{
           const proceed = window.confirm('Are You proceed to Cancel trip?')
@@ -28,6 +28,8 @@ const UserOrder = (props) => {
      }
 
 
+
+
      return (
 
           <Col xs={12} md={12} lg={12}>
@@ -38,8 +40,9 @@ const UserOrder = (props) => {
                     <Card.Title className="head-col fw-bold mb-3">{cost}</Card.Title>
                     <Card.Subtitle className="mb-2 text-color mb-3"><span className="text-dark">Address:</span> {address}</Card.Subtitle>
                     <Card.Subtitle className="mb-2 text-color">{email}</Card.Subtitle>
+                    <Card.Subtitle className="mb-2 text-color">Status: {status}</Card.Subtitle>
                     <Card.Text className="mb-2 text-color mb-3">
-                         <span className="text-dark">Booking For: </span>    {offer}
+                         <span className="text-dark">Booking For: </span>    {place}
                     </Card.Text>
                     <Button variant="dark" className=" text-warning" onClick={()=> cancelBooking(_id)}>Cancel Trip</Button>
                     </Card.Body>
