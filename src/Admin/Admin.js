@@ -1,4 +1,4 @@
-import { Container } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import './Admin.css'
 
@@ -29,59 +29,65 @@ const Admin = () => {
 
      };
      return (
-          <Container className="admin-container">
-                  
-          <form className="d-flex flex-column w-25 justify-content-center mx-auto p-2" onSubmit={handleSubmit(onSubmit)}>
-              
-             <div className="d-flex">
-                  <div className="me-2">
-                         <input className="mb-3"  {...register("place",{ required: true }) } />
+          <Container fluid className="container-body">
+               <Row className="service-container">
 
-                         {errors.place && <span>This field is required</span>}
+                    <div className=" mt-4">
+                         <h1 className="text-color">Add A New Service Offer</h1>
+                    </div>
 
-                         <input className="mb-3" {...register("title", { required: true })} />
+                    <Col xs={12} md={12} lg={12} className="mb-5 mt-2">
+                         <form className="d-flex flex-column mt-5 justify-content-center mx-auto p-5 px-5  form-container" onSubmit={handleSubmit(onSubmit)}>
+                              <input className="mb-3" placeholder="Place"  {...register("place",{ required: true }) } />
 
-                         {errors.title && <span>This field is required</span>}
+                              {errors.place && <span>This field is required</span>}
 
-                         <input className="mb-3" placeholder="" {...register("img", { required: true })} />
+                              <input className="mb-3" placeholder="Title" {...register("title", { required: true })} />
 
-                         {errors.img && <span>This field is required</span>}
+                              {errors.title && <span>This field is required</span>}
 
-                         <input className="mb-3"  placeholder="" {...register("description", { required: true })} />
+                              <input className="mb-3" placeholder="Image" {...register("img", { required: true })} />
 
-                         {errors.description && <span>This field is required</span>}
+                              {errors.img && <span>This field is required</span>}
 
-                         <input className="mb-3"  {...register("location", { required: true })} />
+                              <input className="mb-3"  placeholder="Description" {...register("description", { required: true })} />
 
-                         {errors.location && <span>This field is required</span>}
-                  </div>
+                              {errors.description && <span>This field is required</span>}
 
-                  <div>
-                  <input className="mb-3"  {...register("date",{ required: true }) } />
+                              <input className="mb-3" placeholder="Location"  {...register("location", { required: true })} />
 
-                         {errors.date && <span>This field is required</span>}
+                              {errors.location && <span>This field is required</span>}
+                    
 
-                         <input className="mb-3" {...register("deparature", { required: true })} />
+                    
+                              <input className="mb-3" placeholder="Date"  {...register("date",{ required: true }) } />
 
-                         {errors.deparature && <span>This field is required</span>}
+                              {errors.date && <span>This field is required</span>}
 
-                         <input className="mb-3" placeholder="" {...register("community", { required: true })} />
+                              <input className="mb-3" placeholder="Deparature"  {...register("deparature", { required: true })} />
 
-                         {errors.community && <span>This field is required</span>}
+                              {errors.deparature && <span>This field is required</span>}
 
-                         <input className="mb-3"  placeholder="" {...register("cost", { required: true })} />
+                              <input className="mb-3" placeholder="Community" {...register("community", { required: true })} />
 
-                         {errors.cost && <span>This field is required</span>}
+                              {errors.community && <span>This field is required</span>}
 
-                         <input className="mb-3"  {...register("rating", { required: true })} />
+                              <input className="mb-3"  placeholder="Cost" {...register("cost", { required: true })} />
 
-                         {errors.rating && <span>This field is required</span>}
-                  </div>
-             </div>
+                              {errors.cost && <span>This field is required</span>}
+
+                              <input className="mb-3" placeholder="Rating"  {...register("rating", { required: true })} />
+
+                              {errors.rating && <span>This field is required</span>}
+                    
                
-               <input type="submit" />
-          </form>
-     </Container>
+                    
+                              <input className="fw-bold text-primary" type="submit" />
+                         </form>
+                    </Col>
+               </Row>   
+                   
+          </Container>
      );
 };
 

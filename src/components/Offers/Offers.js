@@ -7,12 +7,15 @@ import './Offers.css'
 const Offers = () => {
 
      const [offers,setOffers] = useState([])
+
      useEffect(()=>{
+         
           fetch('https://boiling-chamber-75432.herokuapp.com/offers')
           .then(res =>res.json())
           .then(data => {
                // console.log(data)
                setOffers(data)
+               // setIsLoading(false)
           })
      },[])
 

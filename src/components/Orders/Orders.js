@@ -58,7 +58,7 @@ const Orders = () => {
 
                     <div className="mt-3 mb-5">
                          <h4 className="text-color">Booking Information</h4>
-                         <h1 className="head-col mb-4">You Must Regiter Your informating <br /> for booking and stay with us. </h1>
+                         <h1 className="head-col mb-4">You Must Register Your informating <br /> for booking and stay with us. </h1>
                     </div>
                
                          <Col xs={12} md={6} lg={6}>
@@ -102,6 +102,10 @@ const Orders = () => {
                                    {errors.phone && <span>This field is required</span>}
 
                                    <input className="mb-3"  defaultValue={findOffer?.place}  {...register("offer", { required: true })} />
+
+                                   {errors.offer && <span>This field is required</span>}
+
+                                   <input className="mb-3"  defaultValue={findOffer?.cost}  {...register("cost", { required: true })} />
 
                                    {errors.offer && <span>This field is required</span>}
                                    

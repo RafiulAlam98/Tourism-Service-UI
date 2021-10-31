@@ -5,8 +5,11 @@ import './Offer.css'
 
 
 const Offer = (props) => {
-     // console.log(props.offer)
+     
      const {img,title,_id,place,cost,rating} = props.offer
+
+     
+     
      return (
           <Col sm={12} md={6} lg={4} className="offer-container">
                <Card className="card-container pb-4">
@@ -25,7 +28,7 @@ const Offer = (props) => {
                               </Link>
                     </Card>
           </Col>
-     );
+     );  
 };
 
 export default Offer;

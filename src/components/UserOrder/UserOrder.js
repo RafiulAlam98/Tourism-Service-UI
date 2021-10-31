@@ -6,7 +6,7 @@ const UserOrder = (props) => {
      const orders = props.user
      const arr = [orders]
      // console.log(arr)
-     const {_id,address,email,name,offer} = props.user
+     const {_id,address,email,name,offer,cost} = props.user
 
      const cancelBooking = id =>{
           const proceed = window.confirm('Are You proceed to Cancel trip?')
@@ -35,6 +35,7 @@ const UserOrder = (props) => {
                    
                     <Card.Body>
                     <Card.Title className="head-col fw-bold mb-3">{name}</Card.Title>
+                    <Card.Title className="head-col fw-bold mb-3">{cost}</Card.Title>
                     <Card.Subtitle className="mb-2 text-color mb-3"><span className="text-dark">Address:</span> {address}</Card.Subtitle>
                     <Card.Subtitle className="mb-2 text-color">{email}</Card.Subtitle>
                     <Card.Text className="mb-2 text-color mb-3">

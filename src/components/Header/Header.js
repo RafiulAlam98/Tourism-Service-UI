@@ -56,7 +56,7 @@ const Header = () => {
     
                   {user.email ?  (
                     <Button onClick={userSignOut} variant="dark" type="submit" className="text-warning ">
-                      LOGOUT
+                      SIGN OUT
                     </Button>
                   ) : (
                     <Nav.Link as={HashLink}  className="text-dark fw-bold" to="/login">
