@@ -12,7 +12,7 @@ const Booking = (props) => {
      const cancelBooking = id =>{
           const proceed = window.confirm('Are You proceed to Cancel?')
           if(proceed){
-               fetch(`http://localhost:5000/users/${id}`,{
+               fetch(`https://boiling-chamber-75432.herokuapp.com/users/${id}`,{
                     method:'DELETE',
                })
                .then(res => res.json())

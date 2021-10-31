@@ -10,7 +10,7 @@ const Admin = () => {
 
      
      const onSubmit = data => {
-          fetch('http://localhost:5000/admin',{
+          fetch('https://boiling-chamber-75432.herokuapp.com/admin',{
                method:'POST',
                headers:{
                     'content-type':'application/json'

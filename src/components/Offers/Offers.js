@@ -8,7 +8,7 @@ const Offers = () => {
 
      const [offers,setOffers] = useState([])
      useEffect(()=>{
-          fetch('http://localhost:5000/offers')
+          fetch('https://boiling-chamber-75432.herokuapp.com/offers')
           .then(res =>res.json())
           .then(data => {
                // console.log(data)

@@ -17,7 +17,7 @@ const Orders = () => {
      // console.log(offerId)
 
      useEffect(()=>{
-          fetch('http://localhost:5000/offers')
+          fetch('https://boiling-chamber-75432.herokuapp.com/offers')
           .then(res =>res.json())
           .then(data => {
                // console.log(data)
@@ -31,7 +31,7 @@ const Orders = () => {
 
      const onSubmit = data => {
           alert("Are You Sure to want to proceed?")
-          fetch('http://localhost:5000/users',{
+          fetch('https://boiling-chamber-75432.herokuapp.com/users',{
                method:'POST',
                headers:{
                     'content-type':'application/json'

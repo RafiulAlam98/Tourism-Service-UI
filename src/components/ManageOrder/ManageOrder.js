@@ -10,7 +10,7 @@ const ManageOrder = () => {
      const cancelBooking = id =>{
           const proceed = window.confirm('Are You proceed to Cancel trip?')
           if(proceed){
-               fetch(`http://localhost:5000/users/${id}`,{
+               fetch(`https://boiling-chamber-75432.herokuapp.com/users/${id}`,{
                     method:'DELETE',
                })
                .then(res => res.json())
@@ -26,7 +26,7 @@ const ManageOrder = () => {
 
 
      useEffect(()=>{
-          fetch('http://localhost:5000/users')
+          fetch('https://boiling-chamber-75432.herokuapp.com/users')
           .then(res=> res.json())
           .then(data => {
                console.log(data)

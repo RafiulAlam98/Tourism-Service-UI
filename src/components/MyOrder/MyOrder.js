@@ -11,7 +11,7 @@ const MyOrder = () => {
      // console.log(user.email)
 
      useEffect(()=>{
-          fetch('http://localhost:5000/users')
+          fetch('https://boiling-chamber-75432.herokuapp.com/users')
           .then(res=> res.json())
           .then(data => {
                // console.log(data)
