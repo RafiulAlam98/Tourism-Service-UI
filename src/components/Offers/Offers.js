@@ -1,21 +1,24 @@
 import React, { useEffect } from 'react';
 import { useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, Spinner } from 'react-bootstrap';
 import Offer from './../Offer/Offer';
 import './Offers.css'
 
 const Offers = () => {
 
      const [offers,setOffers] = useState([])
+     const [isLoading,setIsLoading] = useState(true)
 
      useEffect(()=>{
-         
+         setIsLoading(true)
           fetch('https://boiling-chamber-75432.herokuapp.com/offers')
           .then(res =>res.json())
           .then(data => {
-               // console.log(data)
-               setOffers(data)
-               // setIsLoading(false)
+               if(isLoading){
+                    <Spinner animation="border" variant="danger" />;
+               }
+               setOffers(data) 
+               setIsLoading(false)
           })
      },[])
 
