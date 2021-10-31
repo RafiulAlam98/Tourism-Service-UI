@@ -9,8 +9,8 @@ const Offer = (props) => {
      const {img,title,_id,place,cost,rating} = props.offer
      return (
           <Col sm={12} md={6} lg={4} className="offer-container">
-               <Card >
-                    <Card.Img className="img-fluid" variant="top" src={img} />
+               <Card className="card-container pb-4">
+                    <Card.Img className="img-fluid " variant="top" src={img} />
                          <Card.Body>
                               <div className="d-flex  justify-content-between">
                                    <h6 className="text-color fw-bold">{cost} <span>/Per Person</span></h6>

@@ -7,9 +7,9 @@ const Client = () => {
                <Row  className="pb-5">
 
 
-                    <div className=" mt-4">
-                         <h4 className="text-color">Our Traveller Say</h4>
-                         <h1 className="head-col">What Our Traveller Say  <br /> About Us</h1>
+                    <div className=" mt-4 mb-4">
+                         <h4 className="text-color">Why Choose Us?</h4>
+                         <h1 className="head-col">Why You Are Travel With <br /> Global Voyages</h1>
                     </div>
 
                     <Col sm={12} md={6} lg={4}>
