@@ -2,7 +2,8 @@ import React from 'react';
 import { Container, Nav, Navbar,Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
-import useAuth from './../Hooks/UseAuth/useAuth';
+import useAuth from '../hooks/UseAuth/useAuth';
+
 import './Header.css'
 
 const Header = () => {

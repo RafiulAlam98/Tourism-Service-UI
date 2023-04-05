@@ -5,40 +5,38 @@ const AllOrder = (props) => {
      console.log(props)
      const {_id,email,name,address,place,status} = props.booked
 
-     const cancelBooking = id =>{
-          const proceed = window.confirm('Are You proceed to Cancel trip?')
-          if(proceed){
-               fetch(`https://boiling-chamber-75432.herokuapp.com/users/${id}`,{
-                    method:'DELETE',
-               })
-               .then(res => res.json())
-               .then(data =>{
-                         if (data.deletedCount>0){
-                              alert('deleted successfully')
-                              // const remainingOrder = arr.filter(order => order._id !== id )
-                         }
-               })
-          }
-     }
+     const cancelBooking = id => {
+       const proceed = window.confirm('Are You proceed to Cancel trip?');
+       if (proceed) {
+         fetch(`https://tourism-service-server.vercel.app/users/${id}`, {
+           method: 'DELETE',
+         })
+           .then(res => res.json())
+           .then(data => {
+             if (data.deletedCount > 0) {
+               alert('deleted successfully');
+               // const remainingOrder = arr.filter(order => order._id !== id )
+             }
+           });
+       }
+     };
 
-     
-     const handleUpdate = id =>{
-          fetch(`https://boiling-chamber-75432.herokuapp.com/users/${id}`,{
-               method:'PUT',
-               headers:{
-                    "content-type": "application/json",
-               },
-               body:JSON.stringify(props)
-
-          })
-          .then(res => res.json())
-          .then(data =>{
-               if(data.modifiedCount>0){
-                    alert('User Updated Successfully')
-               }
-               console.log(data)
-          })
-     }
+     const handleUpdate = id => {
+       fetch(`https://tourism-service-server.vercel.app/users/${id}`, {
+         method: 'PUT',
+         headers: {
+           'content-type': 'application/json',
+         },
+         body: JSON.stringify(props),
+       })
+         .then(res => res.json())
+         .then(data => {
+           if (data.modifiedCount > 0) {
+             alert('User Updated Successfully');
+           }
+           console.log(data);
+         });
+     };
 
 
 

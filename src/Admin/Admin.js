@@ -10,21 +10,21 @@ const Admin = () => {
 
      
      const onSubmit = data => {
-          fetch('https://boiling-chamber-75432.herokuapp.com/admin',{
-               method:'POST',
-               headers:{
-                    'content-type':'application/json'
-               },
-               body:JSON.stringify(data)
+          fetch('https://tourism-service-server.vercel.app/admin', {
+            method: 'POST',
+            headers: {
+              'content-type': 'application/json',
+            },
+            body: JSON.stringify(data),
           })
-          .then(res => res.json())
-          .then(data =>{
-               console.log(data)
-               if(data?.insertedId){
-                    console.log(data)
-                    alert('Successfully Added the User')     
-               }
-          })
+            .then(res => res.json())
+            .then(data => {
+              console.log(data);
+              if (data?.insertedId) {
+                console.log(data);
+                alert('Successfully Added the User');
+              }
+            });
           console.log(data)
 
      };

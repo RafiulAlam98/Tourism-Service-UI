@@ -2,7 +2,8 @@ import React from 'react';
 import { Container, Form } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import { useHistory, useLocation } from 'react-router';
-import useAuth from './../Hooks/UseAuth/useAuth';
+import useAuth from '../hooks/UseAuth/useAuth';
+
 import './Login.css'
 
 // .then(result =>{

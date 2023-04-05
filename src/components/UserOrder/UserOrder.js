@@ -11,19 +11,19 @@ const UserOrder = (props) => {
      const cancelBooking = id =>{
           const proceed = window.confirm('Are You proceed to Cancel trip?')
           if(proceed){
-               fetch(`https://boiling-chamber-75432.herokuapp.com/users/${id}`,{
-                    method:'DELETE',
+               fetch(`https://tourism-service-server.vercel.app/users/${id}`, {
+                 method: 'DELETE',
                })
-               .then(res => res.json())
-               .then(data =>{
-                    console.log(data)
-                         if (data.deletedCount>0){
-                            
-                              const remainingOrder = arr.filter(order => order._id !== id ) 
-                              alert('deleted successfully')
-                              
-                         }
-               })
+                 .then(res => res.json())
+                 .then(data => {
+                   console.log(data);
+                   if (data.deletedCount > 0) {
+                     const remainingOrder = arr.filter(
+                       order => order._id !== id
+                     );
+                     alert('deleted successfully');
+                   }
+                 });
           }
      }
 

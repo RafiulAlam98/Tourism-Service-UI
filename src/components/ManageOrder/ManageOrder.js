@@ -12,12 +12,12 @@ const ManageOrder = () => {
 
 
      useEffect(()=>{
-          fetch('https://boiling-chamber-75432.herokuapp.com/users')
-          .then(res=> res.json())
-          .then(data => {
-               console.log(data)
-               setBooking(data)
-          })
+          fetch('https://tourism-service-server.vercel.app/users')
+            .then(res => res.json())
+            .then(data => {
+              console.log(data);
+              setBooking(data);
+            });
      },[])
 
      

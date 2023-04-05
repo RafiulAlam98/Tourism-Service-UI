@@ -12,16 +12,15 @@ const Booking = (props) => {
      const cancelBooking = id =>{
           const proceed = window.confirm('Are You proceed to Cancel?')
           if(proceed){
-               fetch(`https://boiling-chamber-75432.herokuapp.com/users/${id}`,{
-                    method:'DELETE',
+               fetch(`https://tourism-service-server.vercel.app/users/${id}`, {
+                 method: 'DELETE',
                })
-               .then(res => res.json())
-               .then(data =>{
-                         if (data.deletedCount>0){
-                              alert('deleted successfully')
-
-                         }
-               })
+                 .then(res => res.json())
+                 .then(data => {
+                   if (data.deletedCount > 0) {
+                     alert('deleted successfully');
+                   }
+                 });
           }
      }
      return (
