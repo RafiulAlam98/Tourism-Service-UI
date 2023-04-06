@@ -10,9 +10,9 @@ const MyOrder = () => {
   // console.log(user.email)
 
   useEffect(() => {
-    fetch('https://tourism-service-server.vercel.app/users')
-      .then(res => res.json())
-      .then(data => {
+    fetch("https://tourism-service-server-rafiulalam98.vercel.app/users")
+      .then((res) => res.json())
+      .then((data) => {
         // console.log(data)
         setMyOrder(data);
       });

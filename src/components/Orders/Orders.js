@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { useEffect } from 'react';
-import { useParams } from 'react-router';
-import { useState } from 'react';
-import useAuth from './../hooks/UseAuth/useAuth';
-import { Col, Container, Row } from 'react-bootstrap';
-import './Order.css';
+import { useParams } from "react-router";
+import useAuth from "./../hooks/UseAuth/useAuth";
+import "./Order.css";
 
 const Orders = () => {
   const [offers, setOffers] = useState([]);
@@ -22,32 +20,32 @@ const Orders = () => {
   // console.log(offerId)
 
   useEffect(() => {
-    fetch('https://tourism-service-server.vercel.app/offers')
-      .then(res => res.json())
-      .then(data => {
+    fetch("https://tourism-service-server-rafiulalam98.vercel.app/offers")
+      .then((res) => res.json())
+      .then((data) => {
         // console.log(data)
         setOffers(data);
       });
   }, []);
 
-  const findOffer = offers.find(offer => offer?._id === offerId);
+  const findOffer = offers.find((offer) => offer?._id === offerId);
   console.log(findOffer?.place);
 
-  const onSubmit = data => {
-    alert('Are You Sure to want to proceed?');
-    fetch('https://tourism-service-server.vercel.app/users', {
-      method: 'POST',
+  const onSubmit = (data) => {
+    alert("Are You Sure to want to proceed?");
+    fetch("https://tourism-service-server-rafiulalam98.vercel.app/users", {
+      method: "POST",
       headers: {
-        'content-type': 'application/json',
+        "content-type": "application/json",
       },
       body: JSON.stringify(data),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data);
         if (data?.insertedId) {
           console.log(data);
-          alert('Successfully Added the User');
+          alert("Successfully Added the User");
           reset(data);
         }
       });
@@ -62,7 +60,7 @@ const Orders = () => {
             <h4 className="text-color">Booking Information</h4>
             <h1 className="head-col mb-4">
               You Must Register Your informating <br /> for booking and stay
-              with us.{' '}
+              with us.{" "}
             </h1>
           </div>
 
@@ -93,7 +91,7 @@ const Orders = () => {
               <input
                 className="mb-3"
                 defaultValue={user.displayName}
-                {...register('name', { required: true })}
+                {...register("name", { required: true })}
               />
 
               {errors.name && <span>This field is required</span>}
@@ -101,7 +99,7 @@ const Orders = () => {
               <input
                 className="mb-3"
                 defaultValue={user.email}
-                {...register('email', { required: true })}
+                {...register("email", { required: true })}
               />
 
               {errors.email && <span>This field is required</span>}
@@ -109,7 +107,7 @@ const Orders = () => {
               <input
                 className="mb-3"
                 placeholder="Address Field"
-                {...register('address', { required: true })}
+                {...register("address", { required: true })}
               />
 
               {errors.address && <span>This field is required</span>}
@@ -117,7 +115,7 @@ const Orders = () => {
               <input
                 className="mb-3"
                 placeholder="Phone Number"
-                {...register('phone', { required: true })}
+                {...register("phone", { required: true })}
               />
 
               {errors.phone && <span>This field is required</span>}
@@ -125,16 +123,16 @@ const Orders = () => {
               <input
                 className="mb-3"
                 defaultValue={findOffer?.place}
-                {...register('place', { required: true })}
+                {...register("place", { required: true })}
               />
 
               {errors.place && <span>This field is required</span>}
 
               <input
                 className="mb-3"
-                placeholder={'Status'}
-                defaultValue={'pending'}
-                {...register('status', { required: true })}
+                placeholder={"Status"}
+                defaultValue={"pending"}
+                {...register("status", { required: true })}
               />
 
               {errors.status && <span>This field is required</span>}
@@ -149,11 +147,3 @@ const Orders = () => {
 };
 
 export default Orders;
-
-
-
-
-
-
-
-
